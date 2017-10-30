@@ -1,0 +1,62 @@
+
+<div class="container bag">
+        <h2 style='text-align:left'>Cart</h2>
+        
+        <div class="row"> 
+            <div  class="col-sm-6 col-md-8 clearfix product_bag">
+                    <div ng-if="order_done==true">
+                            <h2>Thank you for your order</h2>
+                            <p  class="bg-info"><i>Our manager will contact you in the near future</i></p>
+                    </div>
+                <product-item-basket ng-repeat="product_item_cart in getCart() track by $index"></product-item-basket>
+            </div>
+            <div  class="col-sm-6 col-md-4 clearfix info_bag">
+            <table class="table bold" >
+                <tr>
+                    <td>Grand count:</td>
+                    <td>{{total_count()}}</td>
+                </tr>
+                <tr>
+                    <td>Grand Total</td>
+                    <td>{{total_price()}} EUR</td>
+                </tr>
+            </table>
+            <div class="line"></div>
+            <form name="form" class="css-form" novalidate>
+                <div  class="form-group">
+                    <input type="text" class="form-control"  placeholder="First Name" ng-model="info.firstname"  ng-pattern="/^[A-Za-z]+$/"  name="firstname">
+                </div>    
+                <div  class="form-group">
+                    <input type="text" class="form-control"  placeholder="Last Name" ng-model="info.lastname" ng-pattern="/^[A-Za-z]+$/"  name="lastname">
+                </div>
+                           
+                <div  class="form-group">
+                    <input type="email" class="form-control"  placeholder="Email" ng-model="info.email" overwrite-email name="overwrittenEmail" >
+                </div>
+                <div  class="form-group">
+                        <input type="text" class="form-control"  placeholder="Phone" ng-model="info.phone" ng-pattern="/[0-9]{10}/" name="phone" >
+                </div>
+                           
+                <div  class="form-group">
+                    <input type="text" class="form-control"  placeholder="Address" ng-model="info.address" required name="address">
+                </div>
+               
+                <button class="btn add_bag_btn large" ng-disabled="form.$invalid" ng-click="sendDetalls()">Complete Purchase</button>   
+            </form>
+            <div class="line"></div>
+            <h4 style="text-decoration:underline">Check Your order data before send:</h4>
+            <ul>
+                <li><span class="bold">Firstname:</span> {{info.firstname}}</li>
+                <li><span class="bold">Lastname:</span> {{info.lastname}}</li>
+                <li><span class="bold">Email:</span> {{info.email}}</li>
+                <li><span class="bold">Phone:</span> {{info.phone}}</li>
+                <li><span class="bold">Adress:</span> {{info.address}}</li>
+            </ul>
+            
+
+            </div>
+             </div> 
+            </form>
+            </div>
+        </div>
+       </div>

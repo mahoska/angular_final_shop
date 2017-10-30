@@ -1,0 +1,34 @@
+<div class="bag_product_item">
+		<div class="line"></div>
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+				<div class="title">{{product_item_cart.name}}</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="grey">Size</div>
+						<div><strong>{{product_item_cart.size}}</strong></div>
+					</div>
+					<div class="col-sm-6 col-md-8">
+						<div><strong>{{product_item_cart.price}} EUR</strong></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="grey">Color</div>
+						<div><strong>{{product_item_cart.color}}</strong></div>
+					</div>
+					<div class="col-sm-6 col-md-8">
+						<div class="btn min_balck_btn inline" id="minus" ng-click="changeCount(false)">-</div>
+						<div class="count inline">{{product_item_cart.count}}</div>
+						<div class="btn min_balck_btn inline" id="plus" ng-click="changeCount(true)">+</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2 col-md-2">
+				<button class="btn min_balck_btn" id="del_btm" ng-click="delProduct()">x</button>
+			</div>
+			<div class="col-sm-4 col-md-4">
+				<img ng-src="{{product_item_cart.img}}" class="img-responsive"/>
+			</div>
+		</div>
+	</div>

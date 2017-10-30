@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+         <title>Shop</title> 
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+         <link href="css/bootstrap.min.css.map" rel="stylesheet">
+         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+         <link href="css/bootstrap-theme.min.css.map" rel="stylesheet">
+         <link href="css/style.css" rel="stylesheet">
+ 
+         <script src="./lib/angular/angular.min.js"></script> 
+         <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script> 
+         <script src="./data.json"></script>        
+         <script src="./app.js"></script>
+         <script src="./app.services.js"></script>
+       
+         <script src="src/cart/icon-basket.directive.js"></script> 
+         <script src="src/cart/product-item-basket.directive.js"></script>   
+         <script src="src/cart/form-check.directive.js"></script>
+
+         <script src="src/products/products.controller.js"></script> 
+         <script src="src/products/products.component.js"></script>   
+         <script src="src/product/product.controller.js"></script> 
+         <script src="src/product/product.component.js"></script>   
+         <script src="src/cart/cart.controller.js"></script> 
+         <script src="src/cart/cart.component.js"></script>   
+         <script src="./app.config.js"></script>
+
+    </head>
+    <body ng-app="app"> 
+    <div class='container'>
+        <nav class="navbar navbar-inverse my-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a ui-sref="cart" ui-sref-active="active">
+                        <img alt="Brand" src="./static/logo.png" class="navbar-brand">
+                    </a>
+                        
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a ui-sref="products" ui-sref-active="active">
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="cart" ui-sref-active="active">
+                                <icon-basket></icon-basket>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+            </div>	
+        </nav>
+   
+        <div>
+            <ui-view></ui-view>  
+        </div> 
+    </div>
+    </body>
+</html>
+

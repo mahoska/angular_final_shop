@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row product-full">		
+        <div  class="col-sm-6 col-md-4">
+            <img ng-src="{{product.img}}" alt="" class="img-thumbnail" />
+        </div>
+        <div  class="col-sm-6 col-md-8">
+            <h2 class="bold">{{product.name}}</h2>
+            <div class = "price">{{product.price}} EUR</div>
+            <div class = "size">Size: {{product.size}} </div>
+            <div class="productDesc">{{product.description}}</div>
+            <button class="btn add_bag_btn" ng-click="add_cart()">Add cart</button>
+        </div>
+    </div>		
+</div>
